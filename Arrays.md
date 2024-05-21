@@ -47,23 +47,23 @@ void meow(void)
 }
 ```
 
-###preprocessing###
+### preprocessing ###
 
   converts all the '#include' lines to whatever the      
   underlying  prototypes are within the file
   (plus some other stuff)
 
-###compliling###
+### compliling ###
   
   translating a C language into other language called
   an assembly language
 
-###assembling###
+### assembling ###
 
   takes a translated assembly code and converts
   it into 0's and 1's
 
-###linking###
+### linking ###
 
   links all the 0's and 1's into one file
   

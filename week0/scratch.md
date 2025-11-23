@@ -89,7 +89,32 @@
 
 # Pseudocode
 
-1. The 
+1. The ability to write the pseudocode builds the base of a successful Software Engineer.
+2. It's a human-readable version of a code
+
+---
+
+# Artificial Intelligence
+
+1. `large language models` look at patterns in large blocks of languages. Such language models attempt to create a best guess of what words come after one another or alongside one another.
+2. As very useful in many avenues of life and work, we stipulate that the utilization of AI-based software other than CS50’s own is not reasonable.
+3. CS50’s own AI-based software tool called <a href="https://cs50.ai">CS50 Duck</a> is an AI helper that you can use during this course. It will help you, but not give away the entire answers to the course’s problems.
+
+---
+
+# Scratch
+
+1. Scratch is a visual programming language developed by MIT.
+2. Scratch IDE (integrated development environment) looks like the following:
+   ![SCRATCH](https://cs50.harvard.edu/x/2024/notes/0/cs50Week0Slide162.png)
+
+3. Scratch operates on a coordinate system as follows:
+  ![SCRATCH](https://cs50.harvard.edu/x/2024/notes/0/cs50Week0Slide167.png)
+
+
+
+
+
 
 
 

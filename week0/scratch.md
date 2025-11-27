@@ -111,6 +111,9 @@
 3. Scratch operates on a coordinate system as follows:
   ![SCRATCH](https://cs50.harvard.edu/x/2024/notes/0/cs50Week0Slide167.png)
 
+4. Link to my (buggy) scratch mini game:
+   ![My project in Scratch](https://scratch.mit.edu/projects/1247217754)
+
 
 
 

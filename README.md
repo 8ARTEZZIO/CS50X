@@ -29,7 +29,7 @@ Each week has its own folder containing:
 ---
 
 ## Progress
-- [ ] Week 0  
+- [x] Week 0  
 - [ ] Week 1  
 - [ ] Week 2  
 - [ ] Week 3  

@@ -74,4 +74,100 @@
 
 # Hello, You
 
+1. As in Scratch we've had an ability to prompt the user and concatenate the output to the answer, so in C we can do the same:
 
+   ```
+   #include <stdio.h>
+
+   int main(void):
+   {
+       string answer = get_string("What's your name? ");
+       printf("hello, %s\n", answer);
+   }
+   ```
+
+   - run `make hello` to compile the code,
+   - run script by typing `./hello`
+
+---
+
+# Types
+
+1. `printf` allows to concatenate many formats:
+   - %c   bool,
+   - %f   char,
+   - %i   float,
+   - %li  int,
+   - %s   string
+
+---
+
+# Conditionals
+
+1. In C you can compare two vals as follows:
+
+   ```
+   if (x < y)
+   {
+       printf("x is less than y\n");
+   }
+   else
+   {
+       printf("x is not less than y\n");
+   }
+   ```
+
+   or more conditionals
+   
+   ```
+   if (x < y)
+   {
+       printf("x is less than y\n");
+   }
+   else if (x > y)
+   {
+       printf("x is greater than y\n");
+   }
+   else
+   {
+       printf("x is equal y\n");
+   }
+   ```
+
+---
+
+# Operators
+
+1. Operators are mathematical operations supported by given langage.
+2. Operators in C:
+   - `+`   addition,
+   - `-`   subtraction,
+   - `*`   multiplication,
+   - `/`   division,
+   - `%`   remainder,
+
+---
+
+# Variables
+
+1. Assigning an value to an `int` or integer in C:
+   ```
+   int counter = 0;
+   ```
+2. Adding value of one to `counter`:
+   ```
+   counter = counter + 1;
+   ```
+   or
+   ```
+   counter += 1;
+   ```
+   or
+   ```
+   counter++;
+   ```
+   Subtracting works the same.
+
+---
+
+# compare.c

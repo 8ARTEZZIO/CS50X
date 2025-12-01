@@ -302,11 +302,23 @@
       printf("meow\n");
    }
    ```
-   The initial `void` meand that the function doesn't output (return) any values.
+   The initial `void` means that the function doesn't output (return) any values.
    The `(void)` meant that the function doesn't take any input.
 
+2. This function can be used in the main function as follows:
+   ```
+   #include <stdio.h>
 
+   void meow(void);
 
+   int main(void)
+   {
+      for (int i = 0; i < 3; i++)
+      {
+         meow();
+      }
+   }
+   
 
 
 

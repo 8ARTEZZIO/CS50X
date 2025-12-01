@@ -203,6 +203,120 @@
 
 # agree.c
 
+1. Type `code agree.c`
+2. `string` is a series of charactes, `char` is a single character
+3. Write code as follows:
+   ```
+   #include <stdio.h>
+   #include <cs50.h>
+
+   // Y/N function
+   int main(void)
+   {
+       char s = get_char("Do you agree? ");
+   
+       if (s == 'y' || s == 'Y')
+       {
+           printf("Agreed\n");
+       }
+       if (s == 'n' || s == 'N')
+       {
+           printf("Disagreed\n");
+       }
+   }
+4. `||` saved us a lot of space in this case.
+
+---
+
+# Loops and meow.c
+
+1. Loops are naturally included into C and they work the same as in Scratch.
+2. Type `code meow.c`
+3. Let's write a `while` loop:
+   ```
+   #include <stdio.h>
+
+   int main(void)
+   {
+      int i = 3;
+   `  while (i > 0)
+      {
+         printf("meow\n");
+         i--;
+      }
+   }
+   ```
+   This code will run as long as the value of 'i' is more than 0.
+   Per each iteration 'i' will drop it's responding number by 1 thus stopping the loop after i iterations.
+
+   The count-up version:
+   ```
+   #include <stdio.h>
+
+   int main(void)
+   {
+      int i = 0;
+   `  while (i < 3)
+      {
+         printf("meow\n");
+         i++;
+      }
+   }
+   ```
+   It works in the opposite way as the example from above.
+
+4. Another way of repeating some sort of behavior n times is a `for` loop:
+   ```
+   #include <stdio.h>
+
+   int main(void)
+   {
+      for (int i = 0; i < 3; i++)
+      {
+         printf("meow\n");
+      }
+   }
+   ```
+
+5. An infinite `while` loop (don't use it if not needed, it'll loop into infinity and crash the memory):
+   ```
+   #include <stdio.h>
+
+   int main(void)
+   {
+      while (true)
+      {
+         printf("meow\n");
+      }
+   }
+   ```
+
+---
+
+# Functions
+
+1. Basic function in C:
+   ```
+   void meow(void)
+   {
+      printf("meow\n");
+   }
+   ```
+   The initial `void` meand that the function doesn't output (return) any values.
+   The `(void)` meant that the function doesn't take any input.
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

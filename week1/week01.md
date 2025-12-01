@@ -318,8 +318,121 @@
          meow();
       }
    }
-   
 
+   // Meow once
+   void mewo(void)
+   {
+      printf("meow\n");
+   }
+   ```
+
+3. Your function can be further modified to accept input:
+   ```
+   #include <stdio.h>
+
+   void meow(int n);
+
+   int main(void)
+   {
+      mewo(3);
+   }
+
+   // Meow some number of times
+   void meow(int n)
+   {
+      for (int i = 0; i < n; i++)
+      {
+         printf("meow\n");
+      }
+   }
+   ```
+
+   Notice that now the function `meow(int n)` accepts `n` as an input.
+
+   4. Additionally we can get user input:
+      ```
+      // User input
+
+      #include <cs50.h>
+      #include <stdio.h>
+
+      void meow(int n);
+
+      int main(void)
+      {
+         int n;
+         do
+         {
+            n = get_num("Number: ");
+         }
+         while (n < 1);
+         meow(n);
+      }
+
+      // Meow some number of times
+      void meow(int n)
+      {
+         for (int i = 0; i < n; i++)
+         {
+            printf("meow\n");
+         }
+      }
+      ```
+
+   5. We can even test to ensure that input we get provided by the user is correct:
+       ```
+       #include <cs50.h>
+       #include <stdio.h>
+
+       int get_positive_int(void);
+       void meow(int n);
+
+       int main(void)
+       {
+          int n = get_positive_int();
+          meow(n);
+       }
+
+       // Get number of meows
+       int get_positive_int(void)
+       {
+          int n;
+          do
+          {
+             n = get_int("Number": ");
+          }
+          while (n < 1);
+          return n;
+       }
+
+       // Meow some number of times
+       void meow(int n)
+       {
+          for (int i = 0; i < n; i++)
+          {
+             printf("meow\n");
+          }
+       }
+       ```
+
+       
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+       
+     
 
 
 

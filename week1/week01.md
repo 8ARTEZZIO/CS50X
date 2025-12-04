@@ -349,71 +349,168 @@
 
    Notice that now the function `meow(int n)` accepts `n` as an input.
 
-   4. Additionally we can get user input:
-      ```
-      // User input
+4. Additionally we can get user input:
+   ```
+   // User input
 
-      #include <cs50.h>
-      #include <stdio.h>
+   #include <cs50.h>
+   #include <stdio.h>
 
-      void meow(int n);
+   void meow(int n);
 
-      int main(void)
+   int main(void)
+   {
+      int n;
+      do
       {
-         int n;
-         do
-         {
-            n = get_num("Number: ");
-         }
-         while (n < 1);
-         meow(n);
+         n = get_num("Number: ");
       }
+      while (n < 1);
+      meow(n);
+   }
 
-      // Meow some number of times
-      void meow(int n)
+   // Meow some number of times
+   void meow(int n)
+   {
+      for (int i = 0; i < n; i++)
       {
-         for (int i = 0; i < n; i++)
-         {
-            printf("meow\n");
-         }
+         printf("meow\n");
       }
-      ```
+   }
+   ```
 
-   5. We can even test to ensure that input we get provided by the user is correct:
-       ```
-       #include <cs50.h>
-       #include <stdio.h>
+5. We can even test to ensure that input we get provided by the user is correct:
+    ```
+    #include <cs50.h>
+    #include <stdio.h>
 
-       int get_positive_int(void);
-       void meow(int n);
+    int get_positive_int(void);
+    void meow(int n);
 
-       int main(void)
+    int main(void)
+    {
+       int n = get_positive_int();
+       meow(n);
+    }
+
+    // Get number of meows
+    int get_positive_int(void)
+    {
+       int n;
+       do
        {
-          int n = get_positive_int();
-          meow(n);
+          n = get_int("Number": ");
        }
+       while (n < 1);
+       return n;
+    }
 
-       // Get number of meows
-       int get_positive_int(void)
+    // Meow some number of times
+    void meow(int n)
+    {
+       for (int i = 0; i < n; i++)
        {
-          int n;
-          do
+          printf("meow\n");
+       }
+    }
+    ```
+
+---
+
+# Correctness, Design, Style
+
+1. We can check if the code is correct by following 3 standards:
+   - 'Does the code run as intended?' which in this course can be checked by `check50`,
+   - 'How well is the code designed' - `design50` does it for you inside of this course
+   - 'How aesthetically pleasing and consistent is the code?' - `style50`
+
+---
+
+# Mario
+
+1. To create games of write software we need to divide complicated problems into small, tangible steps.
+2. In this case to create a row:
+   ![mario](https://cs50.harvard.edu/x/notes/1/cs50Week1Slide123.png)
+
+   We can write the following code:
+
+   ```
+   #include <stdio.h>
+
+   int main(void)
+   {
+      for (int i = 0; i < 4; i++)
+      {
+          printf("?");
+      }
+      printf("\n");
+   }
+   ```
+   The question marks are printed in a very specific way to 'stick' to each other.
+
+3. To create vertical blocks like on a following picture:
+
+    ![mario_blocks](https://cs50.harvard.edu/x/notes/1/cs50Week1Slide125.png)
+
+    We can write a following code:
+
+    ```
+    #include <stdio.h>
+
+    int main(void)
+    {
+       for (int i = 0; i < 4; i++)
+       {
+           printf("#\n");
+       }
+    }
+
+    ```
+
+4. To create a simple 3x3 block we'll need to use nested for loops:
+
+    ![mario_blocks](https://cs50.harvard.edu/x/notes/1/cs50Week1Slide127.png)
+
+   The code is as follows:
+
+   ```
+   #include <stdio.h>
+
+   int main(void)
+   {
+       for (int i = 0; i < 3; i++)
+       {
+          for (int i = 0; i < 3; j++)
           {
-             n = get_int("Number": ");
+               printf("#");
           }
-          while (n < 1);
-          return n;
        }
+   }
+   ```
 
-       // Meow some number of times
-       void meow(int n)
+   To make block with a constant size we can use a code as follows:
+
+   ```
+   #include <stdio.h>
+
+   int main(void)
+   {
+       const int n = 3;
+       for (int i = 0; i < n; i++)
        {
-          for (int i = 0; i < n; i++)
+          for (int i = 0; i < n; j++)
           {
-             printf("meow\n");
+               printf("#");
           }
        }
-       ```
+   }
+   ```
+
+   The `n` is a constant. It can never be changed without changing the code inside.
+
+   
+   
+
 
        
 

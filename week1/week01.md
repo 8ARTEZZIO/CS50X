@@ -508,6 +508,97 @@
 
    The `n` is a constant. It can never be changed without changing the code inside.
 
+---
+
+# Comments
+
+1. Comments are supposed to explain code to colleagues and to yourself (e.g. afte a break from coding etc.)
+2. All code in this course must include robust comments.
+3. In language `C` we use `//` inside of the code, followed by a comment.
+   ```
+   // Helper function
+   
+   #include <stdio.h>
+   
+   void print_row(int width);
+     
+   int main(void)
+   {
+       const int n = 3;
+   
+       // Print n rows
+       for (int i = 0; i < n; i++)
+       {
+           print_row(n);
+       }
+   }
+   
+   void print_row(int width)
+   {
+       for (int i = 0; i < width; i++)
+       {
+           printf("#");
+       }
+       printf("\n");
+   }
+   ```
+
+---
+
+# More About Operators
+
+1. We can write a very simple calculator in C:
+   ```
+   // Addition
+   
+   #include <cs50.h>
+   #include <stdio.h>
+   
+   int main(void)
+   {
+       // Prompt user for x
+       int x = get_int("x: ");
+   
+       // Prompt user for y
+       int y = get_int("y: ");
+   
+       // Add numbers
+       int z = x + y;
+   
+       // Perform addition
+       printf("%i\n", z);
+   }
+   ```
+
+   The `get_int` funtion takes an input twice and then the output is printed automatically.
+
+2. The number can be doubled by using the following line
+   ```
+   long dollars = 1
+   dollars *= 2
+   printf("$%li\n", dollars)
+   ```
+   It works similar as in many other languages.
+
+3. Types of data that will be mentioned in this course include:
+   
+    -`bool`, a Boolean expression of either true or false
+    -`char`, a single character like a or 2
+    -`double`, a floating-point value with more digits than a float
+    -`float`, a floating-point value, or a real number with a decimal value
+    -`int`, integers up to a certain size, or number of bits
+    -`long`, integers with more bits, so they can count higher than an int
+    -`string`, a string of characters
+
+---
+
+# Truncation
+
+1. Another issue that can arise when using data types includes truncation:
+
+
+
+
    
    
 

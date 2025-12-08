@@ -596,7 +596,54 @@
 
 1. Another issue that can arise when using data types includes truncation:
 
+   ```
+   // Division with ints, demonstrating truncation
 
+   #inlcude <cs50.h>
+   #include <stdio.h>
+   
+   int main(void)
+   {
+       // Prompt user for x
+       int x = get_int("x: ");
+   
+       // Prompt user for y
+       int y = get_int("y: ");
+   
+       // Divide x by y
+       printf("%i\n", x / y);
+   }
+   ```
+   This will result in any digit after any digits after the decimal have been thrown away.
+
+2. To solve this we can use `float`:
+
+   ```
+   // Floats
+   
+   #include <cs50.h>
+   #include <stdio.h>
+   
+   int main(void)
+   {
+       // Prompt user for x
+       float x = get_float("x: ");
+   
+       // Prompt user for y
+       float y = get_float("y: ");
+   
+       // Divide x by y
+       printf("%.50f\n", x / y);
+   }
+   ```
+
+   This will solve the problem partially but it'll still cause some imprecision.
+
+3. During coding, pay attention to data types being used.
+
+---
+
+# The end of Week 1
 
 
    

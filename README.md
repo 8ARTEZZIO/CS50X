@@ -15,7 +15,7 @@ I completed **CS50P** earlier, and now I’m taking CS50x to strengthen my low-l
 ## Goals
 - Build strong CS fundamentals before starting university  
 - Improve my algorithmic thinking  
-- Prepare for Computer Science degree at QMUL  
+- Prepare for Computer Science degree at Kingston University  
 - Strengthen backend engineering foundations  
 
 ---

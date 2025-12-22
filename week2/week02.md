@@ -70,15 +70,154 @@
    - `string` ? bytes
 2. Inside of every computer there's a finite amount of mem available:
 
-   ![memory picture](https://cs50.harvard.edu/x/notes/2/cs50Week2Slide084.png)
+     ![memory picture](https://cs50.harvard.edu/x/notes/2/cs50Week2Slide084.png)
+  
+     Physically, the memory could be visualized as follows:
+  
+     ![memory array](https://cs50.harvard.edu/x/notes/2/cs50Week2Slide087.png)
+  
+     E.g. `int` might look as follows:
+  
+     ![int memory](https://cs50.harvard.edu/x/notes/2/cs50Week2Slide088.png)
 
-   Physically, the memory could be visualized as follows:
+    We can generate a program ther explores these concepts:
+    
+    ```
+    // Averages three (hardcoded) numbers
+    
+    #include <stdio.h>
+    
+    int main(void)
+    {
+        // Scores
+        int score1 = 72;
+        int score2 = 73;
+        int score3 = 33;
+    
+        // Print average
+        printf("Average: %f\n", (score1 + score2 + score3) / 3.0);
+    }
+    ```
+    
+    The divider is a floating number `3.0` so the result will be a floating num too.
+    
+    These vars are stored in a memory in the following way:
+    
+    ![memory visualization](https://cs50.harvard.edu/x/notes/2/cs50Week2Slide098.png)
 
-   ![memory array](https://cs50.harvard.edu/x/notes/2/cs50Week2Slide087.png)
+3.1. We can upgrade the code from above by creating an array:
 
-   E.g. `int` might look as follows:
+    // Averages three (hardcoded) numbers
+    
+    #include <stdio.h>
+    
+    int main(void)
+    {
+        // Scores
+        int scores[3];
+        int scores[0] = 72;
+        int scores[1] = 73;
+        int scores[2] = 33;
+    
+        // Print average
+        printf("Average: %f\n", (scores[0] + scores[1] + scores[2]) / 3.0);
+    }
 
-   ![int memory](https://cs50.harvard.edu/x/notes/2/cs50Week2Slide088.png)
+3.2. There's still a room for improvement:    
+
+    // Averages three numbers using an array and a loop
+    
+    #include <cs50.h>
+    #include <stdio.h>
+    
+    int main(void)
+    {
+        // Get scores
+        int scores[3];
+        for (int i = 0; i < 3; i++)
+        {
+            scores[i] = get_int("Score: ");
+        }
+    
+        // Print average
+        printf("Average: %f\n", (scores[0] + scores[1] + scores[2]) / 3.0);
+    }
+
+---
+
+# Strings
+
+1. `String` is just an array of variables of type `char` (an array of characters)
+2. The example code that proofs the concept:
+   ```
+   // Prints chars
+  
+    #include <stdio.h>
+    
+    int main(void)
+    {
+        char c1 = 'H';
+        char c2 = 'I';
+        char c3 = '!';
+    
+        printf("%c%c%c\n", c1, c2, c3);
+    }
+   ```
+3. The characters are simply the image representations of ASCII nums:
+   ```
+    #include <stdio.h>
+    
+    int main(void)
+    {
+        char c1 = 'H';
+        char c2 = 'I';
+        char c3 = '!';
+    
+        printf("%i %i %i\n", c1, c2, c3);
+    }
+   ```
+4. To further understand how a `string` works, write the following code:
+   ```
+   // Treats string as array
+    
+    #include <cs50.h>
+    #include <stdio.h>
+    
+    int main(void)
+    {
+        string s = "HI!";
+        printf("%c%c%c\n", s[0], s[1], s[2]);
+    }
+   ```
+
+   We can replase `%c` with `%i` as follows:
+
+   ```
+       
+    // Prints string's ASCII codes, including NUL
+    
+    #include <cs50.h>
+    #include <stdio.h>
+    
+    int main(void)
+    {
+        string s = "HI!";
+        printf("%i %i %i %i\n", s[0], s[1], s[2], s[3]);
+    }
+   ```
+   This prints the string's ASCII codes, including NUL.
+
+
+   
+
+
+
+   
+
+   
+
+    
+    
 
 
 

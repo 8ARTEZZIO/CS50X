@@ -207,6 +207,58 @@
    ```
    This prints the string's ASCII codes, including NUL.
 
+   Let's imagine that we want to say 'HI!\nBYE!\n'. Modidy your code as follows:
+
+   ```
+   // Multiple strings
+
+   #include <cs50.h>
+   #include <stdio.h>
+
+   int main(void)
+   {
+     string s = "HI!";
+     string t = "BYE!";
+
+     printf("%s\n", s);
+     printf("%s\n", t);
+   }
+
+   ```
+
+    The code from above can be visualised as follows:
+
+     ![](https://cs50.harvard.edu/x/notes/2/cs50Week2Slide126.png)
+
+    We can further improve this code:
+
+    ```  
+    // Array of strings
+    
+    #include <cs50.h>
+    #include <stdio.h>
+    
+    int main(void)
+    {
+        string words[2];
+    
+        words[0] = "HI!";
+        words[1] = "BYE!";
+    
+        printf("%s\n", words[0]);
+        printf("%s\n", words[1]);
+        // or
+        //printf("%c%c%c\n", words[0][0], words[0][1], words[0][2]);
+        //printf("%c%c%c%c\n", words[1][0], words[1][1], words[1][2], words[1][3]);
+    }
+    ```
+    
+
+
+      
+
+   
+
 
    
 

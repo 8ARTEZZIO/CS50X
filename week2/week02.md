@@ -252,7 +252,141 @@
         //printf("%c%c%c%c\n", words[1][0], words[1][1], words[1][2], words[1][3]);
     }
     ```
+
+---
+
+# String Length
+
+1. A common problem in lang C (and some other) is finding a length of a string.
+   ```
+   // Find length of a string
     
+    #include <cs50.h>
+    #include <stdio.h>
+    
+    int main(void)
+    {
+        string s = get_string("Type word: ");
+        int count = 0;
+    
+        while (s[count] != '\0')
+        {
+            count++;
+        }
+        printf("%i\n", count);
+    }
+   ```
+  We could abstract away the couting part of the function as well.
+
+2. Because this is such a common problem, programmers created something like libraries.
+   In this case it's called <string.h>.
+
+   ```
+    // Determines the length of a string using a function
+    
+    #include <cs50.h>
+    #include <stdio.h>
+    #include <string.h>
+    
+    int main(void)
+    {
+        // Prompt for user's name
+        string name = get_string("Name: ");
+        int length = strlen(name);
+        printf("%i\n", length);
+    }
+   ```
+
+3. Another example is uppercasing the words/letters in C and other languages.
+   Instead of going into weeds and bushes (which I'm showing below)
+   ```
+   // transfrorm words into uppercased ones
+      
+    #include <cs50.h>
+    #include <stdio.h>
+    #include <string.h>
+    
+    int main(void)
+    {
+        string s = get_string("Input: ");
+    
+        printf("Output: ");
+        for (int i=0, n=strlen(s); i < n; i++)
+        {
+            if (s[i] >= 'a' && s[i] <= 'z')
+            {
+                printf("%c", s[i] - 32);
+            }
+            else
+            {
+                printf("%c", s[i]);
+            }
+        }
+        printf("\n");
+    }
+   ```
+   We can just use the library <ctype.h>:
+   ```
+    // Uppercases string using ctype library
+    
+    #include <cs50.h>
+    #include <ctype.h>
+    #include <stdio.h>
+    #include <string.h>
+    
+    int main(void)
+    {
+        string s = get_string("Before: ");
+        printf("After:  ");
+        for (int i = 0, n = strlen(s); i < n; i++)
+        {
+            printf("%c", toupper(s[i]));
+        }
+        printf("\n");
+    }
+   ```
+
+---
+
+# Command-Line Arguments
+
+1. Command-Line Arguments are those arguments that are passed to your program at the command line.
+   E.g.: `clang code code.c -lcs50`
+
+2. The example of it's practical but basic usage is the following code:
+   ``` greet.c
+    // Prints a command-line argument
+    
+    #include <cs50.h>
+    #include <stdio.h>
+    
+    int main(int argc, string argv[])
+    {
+        if (argc == 2)
+        {
+            printf("hello, %s\n", argv[1]);
+        }
+        else
+        {
+            printf("hello, world\n");
+        }
+    }
+   ```
+   This program knows the amount of passed arguments and keeps them inside of array `argv[]`.
+   `./greet Bartek` -> `hello, Bartek`
+
+---
+
+# Exit Status
+
+
+
+
+
+
+
+
+
 
 
       

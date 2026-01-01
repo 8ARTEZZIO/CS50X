@@ -379,6 +379,37 @@
 
 # Exit Status
 
+1. The program sends a special exit code to the computer after ending.
+2. No error is `0`, error - `1`.
+3. The following code shows it in a simple way:
+   ```
+   // Returns explicit value from main
+
+    #include <cs50.h>
+    #include <stdio.h>
+    
+    int main(int argc, string argv[])
+    {
+        if (argc != 2)
+        {
+            printf("Missing command-line argument\n");
+            return 1;
+        }
+        printf("hello, %s\n", argv[1]);
+        return 0;
+    }
+   ```
+  You can check the returned value by typing `echo $?`.
+
+---
+
+# Cryptography
+
+1. Cryptography is an art of ciphering and deciphering a message.
+2. `plaintext` + `key` >- `cipher` -> `ciphertext`
+
+
+
 
 
 

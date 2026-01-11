@@ -106,6 +106,125 @@ Regardless, we should always look for the most optimized code.
 
 # phonebook.c
 
+```phonebook.c
+// Implements a phone book without structs
+
+#include <cs50.h>
+#include <stdio.h>
+#include <string.h>
+
+int main(void)
+{
+    // Arrays of strings
+    string names[] = {"Kelly", "David", "John"};
+    string numbers[] = {"+1-617-495-1000", "+1-617-495-1000", "+1-949-468-2750"};
+
+    // Search for name
+    string name = get_string("Name: ");
+    for (int i = 0; i < 3; i++)
+    {
+        if (strcmp(names[i], name) == 0)
+        {
+            printf("Found %s\n", numbers[i]);
+            return 0;
+        }
+    }
+    printf("Not found\n");
+    return 1;
+}
+```
+While this code works there are many inefficiencies which we could improve.
+We could store names and numbers in something called 'struct' and we could
+also use the binary search in order to decrease time/space complexity.
+
+---
+
+# Structs
+
+1. We can create our own data types via a `struct`.
+2. For example:
+   ```struct.c
+   typedef struct
+   {
+       string name;
+       string number;
+   } person;
+   ```
+3. Now we can make improve our code from above:
+   ```phonebook.c
+   // Implements a phone book with structs
+   
+   #include <cs50.h>
+   #include <stdio.h>
+   #include <string.h>
+   
+   typedef struct
+   {
+       string name;
+       string number;
+   } person;
+   
+   int main(void)
+   {
+       person people[3];
+   
+       people[0].name = "Kelly";
+       people[0].number = "+1-617-495-1000";
+   
+       people[1].name = "David";
+       people[1].number = "+1-617-495-1000";
+   
+       people[2].name = "John";
+       people[2].number = "+1-949-468-2750";
+   
+       // Search for name
+       string name = get_string("Name: ");
+       for (int i = 0; i < 3; i++)
+       {
+           if (strcmp(people[i].name, name) == 0)
+           {
+               printf("Found %s\n", people[i].number);
+               return 0;
+           }
+       }
+       printf("Not found\n");
+       return 1;
+   }
+   ```
+   The code begins with `typedef struct` where a new datatype called `person`
+   is defined. In the following code we initialize the data type by typing
+   `people person[3];` which simply makes and array of 3 elements that we've made.
+   The specific thing to remember is the *dot notation*, such as `people[0].name`.
+
+---
+
+# Sorting and Selection Sort
+
+1. Sorting the list is basically an act of organising based on chosen criteria e.g.
+   ascending numbers or alphabetic order.
+2. The sorted list is much easier for a computer to utilize it.
+   E.g. we can use binary search only on sorted array!
+3. There are many different types of sorting algorithms and *selection sort* is one of them.
+   ```
+   For i from 0 to n–1
+    Find smallest number between numbers[i] and numbers[n-1]
+    Swap smallest number with numbers[i]
+   ```
+   This algorithm has to iterate in a following number of steps:
+   ```
+   (n - 1) + (n - 2) + (n - 3) + ... + 1
+   ```
+   And this is n(n-1)/2 or, more simiply O(n<sup>2</sup>).
+
+   This algorithm will run with such a complexity in a best and worst case.
+
+---
+
+# Bubble Sort
+   
+
+
+
 
 
 

@@ -218,6 +218,78 @@ also use the binary search in order to decrease time/space complexity.
 
    This algorithm will run with such a complexity in a best and worst case.
 
+   ```selection.c
+   // selection sort algorithm
+
+   #include <stdio.h>
+   #include <stdlib.h>
+   
+   void SelectionSort(int arr[], int n);
+   
+   int main(int argc, char * argv[])
+   {
+       if ( argc >= 2 )
+       {
+           // length of an input
+           // determines the len of created array
+           int n = argc;
+           int arr[n];
+   
+           for (int i = 1; i < n; i++)
+           {
+               int k = atoi(argv[i]);
+               arr[i-1] = k;
+           }
+   
+           SelectionSort(arr, argc);
+   
+           for (int j = 0; j < n - 1; j++)
+           {
+               printf("%i ", arr[j]);
+           }
+           printf("\n");
+   
+           return 0;
+       }
+   
+       else
+       {
+           return 1;
+       }
+   
+   }
+   
+   
+   void SelectionSort(int arr[], int n)
+   {
+       // add command line arguments to array of integers
+       for (int i = 0; i < n - 1; i++)
+       {
+           // assume the current position holds
+           // the lowest number
+           int min_indx = i;
+   
+           // sort the array
+           for (int j = i + 1; j < n - 1; j++)
+           {
+               if (arr[j] < arr[min_indx])
+               {
+                   // update the min index if the number is lower
+                   min_indx = j;
+               }
+           }
+   
+           // after finding the position
+           // move this element on its
+           // correct position
+           int temp = arr[i];
+           arr[i] = arr[min_indx];
+           arr[min_indx] = temp;
+       }
+   
+   }
+   ```
+
 ---
 
 # Bubble Sort

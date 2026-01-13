@@ -293,6 +293,113 @@ also use the binary search in order to decrease time/space complexity.
 ---
 
 # Bubble Sort
+
+1. *Bubble sort* is another sorting algorithm that works by repeatedly swapping elements to “bubble” larger elements to the end.
+   ```
+   Repeat n-1 times
+    For i from 0 to n–2
+        If numbers[i] and numbers[i+1] out of order
+            Swap them
+    If no swaps
+        Quit
+   ```
+2. Bubble sort can be analyzed as follows:
+   - (n-1) x (n-1)
+   - n<sup>2</sup> - 2n + 1
+   - or, more simply O(n<sup>2</sup>).
+3. In the worst case or upper bound, bubble sort is in the order of O(n<sup>2</sup>).
+   In the best case of lower bound, bubble sort is in the order of Ω⁡(𝑛).
+
+---
+
+# Recursion
+
+1. *Recursion* is a concept within programming where a function calls itself.
+2. Examples of recursion:
+
+   ```
+   If no doors left
+    Return false
+   If number behind middle door
+       Return true
+   Else if number < middle door
+       Search left half
+   Else if number > middle door
+       Search right half
+   ```
+   ```
+   1  Pick up phone book
+   2  Open to middle of phone book
+   3  Look at page
+   4  If person is on page
+   5      Call person
+   6  Else if person is earlier in book
+   7      Search left half of book
+   9  Else if person is later in book
+   10     Search right half of book
+   12 Else
+   13     Quit
+   ```
+3. A *base case* is defined as a condition that stops the recursion from continuing.
+4. A *recursive case* is defined as the part of the recursive function that calls itself with a modified input,
+   while moving towards the base case.
+5. Another example of recursion is its implementation inside the pyramid printing program:
+   ```recursion.c
+   // Draws a pyramid using recursion
+   
+   #include <cs50.h>
+   #include <stdio.h>
+   
+   void draw(int n);
+   
+   int main(void)
+   {
+       // Get height of pyramid
+       int height = get_int("Height: ");
+   
+       // Draw pyramid
+       draw(height);
+   }
+   
+   void draw(int n)
+   {
+       // If nothing to draw
+       if (n <= 0)
+       {
+           return;
+       }
+   
+       // Draw pyramid of height n - 1
+       draw(n - 1);
+   
+       // Draw one more row of width n
+       for (int i = 0; i < n; i++)
+       {
+           printf("#");
+       }
+       printf("\n");
+   }
+   ```
+
+---
+
+# Merge Sort
+
+1. Now we can leverage recursion in order ot write a more efficient sorting algorithm - merge sort.
+2. Pseudocode for it is quite short:
+   ```
+   If only one number
+      Quit
+   Else
+      Sort left half of numbers
+      Sort right half of numbers
+      Merge sorted halves
+   ```
+3. Merge sort is a very efficient sort algorithm with a worst case of 𝑂⁡(𝑛⁢log⁡𝑛). The best case is still Ω⁡(𝑛⁢log⁡𝑛)
+   because the algorithm still must visit each place in the list. Therefore, merge sort is also Θ⁡(𝑛⁢log⁡𝑛)
+   since the best case and worst case are the same.
+
+
    
 
 
